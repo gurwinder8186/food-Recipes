@@ -1,10 +1,12 @@
+
+// HERE WILL BE THE FIRST HOME PAGE
 import { Outlet } from 'react-router-dom'
-// import AllFood from './Food'
+import RecipeSearch from './SearchBar'
 
 export default function Main() {
   return (
     <>
-      {/* <AllFood /> */}
+      <RecipeSearch />
       <Outlet />
     </>
   )
