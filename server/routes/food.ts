@@ -3,7 +3,7 @@ import * as db from '../db/index.ts'
 
 const router = Router()
 
-router.get('/api/cuisines', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const cuisines = await db.getAllCuisines()
     res.json(cuisines)
@@ -13,7 +13,7 @@ router.get('/api/cuisines', async (req, res) => {
   }
 })
 
-router.get('/api/cuisines/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const id = Number(req.params.id)
     const foodList = await db.getAllFoodLists(id)

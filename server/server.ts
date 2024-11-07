@@ -7,7 +7,7 @@ const server = express()
 
 server.use(express.json())
 
-server.use('/api/v1/cuisines', foodRoutes)
+server.use('/api/cuisines', foodRoutes)
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))
