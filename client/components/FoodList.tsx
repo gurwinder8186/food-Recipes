@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Outlet, useParams } from 'react-router-dom'
 import { GetFoodList } from '../apiClient.ts'
 
 function FoodList() {
@@ -15,6 +15,7 @@ function FoodList() {
   }
 
   return (
+    <>
     <section className='foodlist'>
       <h1>Select an option to see more!</h1>
       {data.map((food) => (
@@ -24,6 +25,8 @@ function FoodList() {
         </div>
       ))}
     </section>
+    <Outlet/>
+    </>
   )
 }
 
