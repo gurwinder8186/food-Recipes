@@ -16,3 +16,6 @@ export async function getRecipe(id: number): Promise<Recipe[]> {
 export async function deleteRecipe(name: string): Promise<Recipe[]>{
   return await connection('recipes').where('name', name).delete();
 }
+export async function addRecipe(name: string): Promise<Recipe[]>{
+  return await connection('recipes').where('name', name).delete();
+}

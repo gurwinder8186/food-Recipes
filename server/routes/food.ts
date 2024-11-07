@@ -44,6 +44,15 @@ router.delete('/:id/:name', async (req, res) => {
     res.status(500).json({ message: 'Something went wrong' })
   }
 })
-
+router.post('/:id/:id', async (req, res) => {
+  try {
+    const id = String(req.params.id)
+    const recipe = await db.deleteRecipe(id)
+    res.json(recipe)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ message: 'Something went wrong' })
+  }
+})
 
 export default router
