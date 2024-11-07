@@ -1,8 +1,11 @@
-import { GetRecipe } from "../apiClient"
+import { useParams } from 'react-router-dom'
+import { useRecipe } from '../apiClient'
 
 function Recipe() {
-
-  const { data, isError, isPending } = GetRecipe()
+  const { id, recipeId } = useParams()
+  const cuisineId = id as string
+  const recId = recipeId as string
+  const { data, isError, isPending } = useRecipe({id: cuisineId, recipeId: recId})
 
   if (isPending) {
     return <p>Loading...</p>
@@ -11,13 +14,12 @@ function Recipe() {
   if (isError) {
     return <p>There was an error</p>
   }
-  
 
   return (
-    <div>
-      <h1>Select your favourite food!</h1>
-      
-    </div>
+    <section className="recipe">
+      <h1>{data.name}</h1>
+      <p>TESTING</p>
+    </section>
   )
 }
 

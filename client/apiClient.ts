@@ -2,11 +2,12 @@ import request from 'superagent'
 import { useQuery } from '@tanstack/react-query'
 import { Cuisine, Dish, Recipe } from '../models/food'
 
-export function GetCuisines() {
+
+export function useCuisines() {
   return useQuery({
     queryKey: ['cuisines'],
     queryFn: async () => {
-      const res = await request.get('/api/v1/cuisines/')
+      const res = await request.get('/api/v1/cuisines')
       return res.body as Cuisine[]
     },
   })
@@ -14,7 +15,7 @@ export function GetCuisines() {
 
 export function useFoodList(id: string) {
   return useQuery({
-    queryKey: ['foodList'],
+    queryKey: ['foodList', id],
     queryFn: async () => {
       const res = await request.get(`/api/v1/cuisines/${id}`)
       return res.body as Dish[]
@@ -22,11 +23,14 @@ export function useFoodList(id: string) {
   })
 }
 
-export function GetRecipe() {
+export function useRecipe(
+{id, recipeId}: {id: string, recipeId: string }
+) {
+
   return useQuery({
-    queryKey: ['recipe'],
+    queryKey: ['recipes', recipeId],
     queryFn: async () => {
-      const res = await request.get('/api/v1/cuisines/${id}/${id}')
+      const res = await request.get(`/api/v1/cuisines/${id}/${recipeId}`)
       return res.body as Recipe[]
     },
   })
