@@ -1,16 +1,10 @@
-import { getAllCuisines } from '../../server/db/index.ts'
 import { useQuery } from '@tanstack/react-query'
 import { Cuisine } from '../../models/food.ts'
+import { GetCuisines } from '../apiClient.ts'
 
 function Food() {
-  const {
-    data: Cuisines,
-    isPending,
-    isError,
-  } = useQuery<Cuisine[]>({
-    queryKey: ['Cuisines'],
-    queryFn: getAllCuisines,
-  })
+
+  const { data, isError, isPending } = GetCuisines()
 
   if (isPending) {
     return <p>Loading...</p>
@@ -19,10 +13,12 @@ function Food() {
   if (isError) {
     return <p>There was an error</p>
   }
+  
 
   return (
     <div>
-      {Cuisines?.map((cuisine) => (
+      <h1>Select your favourite food!</h1>
+      {data.map((cuisine) => (
         <div key={cuisine.name}>
           <h3>{cuisine.name}</h3>
           <p>{cuisine.description}</p>
