@@ -37,8 +37,8 @@ router.get('/:id/:id', async (req, res) => {
 router.delete('/:id/:name', async (req, res) => {
   try {
     const name = String(req.params.name)
-    const recipe = await db.deleteRecipe(name)
-    res.json(recipe)
+    await db.deleteRecipe(name)
+    res.sendStatus(204)
   } catch (error) {
     console.error(error)
     res.status(500).json({ message: 'Something went wrong' })
@@ -46,8 +46,8 @@ router.delete('/:id/:name', async (req, res) => {
 })
 router.post('/:id/:id', async (req, res) => {
   try {
-    const id = String(req.params.id)
-    const recipe = await db.deleteRecipe(id)
+    const {name, ingredients, instructions, } = req.body
+    const recipe = await db.addRecipe(name, ingredients, instructions)
     res.json(recipe)
   } catch (error) {
     console.error(error)
