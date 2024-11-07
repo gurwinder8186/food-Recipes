@@ -1,4 +1,5 @@
 export interface Cuisine {
+  id: number
   name: string
   description: string
 }

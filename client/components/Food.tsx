@@ -1,5 +1,4 @@
-import { useQuery } from '@tanstack/react-query'
-import { Cuisine } from '../../models/food.ts'
+import { Link } from 'react-router-dom'
 import { GetCuisines } from '../apiClient.ts'
 
 function Food() {
@@ -16,15 +15,20 @@ function Food() {
   
 
   return (
-    <div>
+    <>
+    <section className='home'>
       <h1>Select your favourite food!</h1>
       {data.map((cuisine) => (
         <div key={cuisine.name}>
-          <h3>{cuisine.name}</h3>
+          <h3>
+            {cuisine.name}
+            
+            </h3>
           <p>{cuisine.description}</p>
         </div>
       ))}
-    </div>
+    </section>
+    </>
   )
 }
 
