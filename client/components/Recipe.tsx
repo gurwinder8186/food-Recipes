@@ -3,8 +3,8 @@ import { GetRecipe } from "../apiClient"
 
 function Recipe() {
   
-  const { id } = useParams()
-  const { data, isError, isPending } = GetRecipe(id)
+  const { id, recipeId } = useParams()
+  const { data, isError, isPending } = GetRecipe(id, recipeId)
 
   if (isPending) {
     return <p>Loading...</p>

@@ -23,11 +23,14 @@ export function GetFoodList(id: string | undefined) {
   })
 }
 
-export function GetRecipe(id: string | undefined) {
+export function GetRecipe(
+  id: string | undefined,
+  recipeId: string | undefined,
+) {
   return useQuery({
     queryKey: ['recipes', id],
     queryFn: async () => {
-      const res = await request.get(`/api/v1/cuisines/${id}/${id}`)
+      const res = await request.get(`/api/v1/cuisines/${id}/${recipeId}`)
       return res.body as Recipe[]
     },
   })

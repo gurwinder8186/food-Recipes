@@ -1,4 +1,4 @@
-// HERE WILL BE THE FIRST HOME PAGE
+
 
 import AllFood from './Food'
 
