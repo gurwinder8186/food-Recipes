@@ -1,10 +1,10 @@
-import Food from './Food.tsx'
+import Main from "./Main"
 
 function App() {
   return (
     <div className="app">
       <h1>Food Recipes</h1>
-      <Food />
+      <Main />
     </div>
   )
 }

@@ -1,6 +1,20 @@
 // HERE WILL BE THE FIRST HOME PAGE
-import Food from './AllFood'
+import { GetCuisines } from '../apiClient'
+import AllFood from './Food'
 
 export default function Main() {
-  return <></>
+  const { isError, isPending } = GetCuisines()
+
+  if (isPending) {
+    return <p>Loading...</p>
+  }
+
+  if (isError) {
+    return <p>There was an error</p>
+  }
+  return (
+    <>
+    <AllFood />
+    </>
+  )
 }
