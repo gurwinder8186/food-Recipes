@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import { GetCuisines } from '../apiClient.ts'
+import { useCuisines } from '../apiClient.ts'
 
 function Food() {
-  const { data, isError, isPending } = GetCuisines()
+  const { data, isError, isPending } = useCuisines()
 
   if (isPending) {
     return <p>Loading...</p>
