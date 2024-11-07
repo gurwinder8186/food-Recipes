@@ -20,10 +20,11 @@ function Food() {
       <h1>Select your favourite food!</h1>
       {data.map((cuisine) => (
         <div key={cuisine.name}>
+          <Link to={`/cuisines/${id}`}>
           <h3>
             {cuisine.name}
-            
             </h3>
+            </Link>
           <p>{cuisine.description}</p>
         </div>
       ))}
