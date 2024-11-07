@@ -5,6 +5,7 @@ import Main from './components/Main'
 
 export default createRoutesFromElements(
   <Route path="/" element={<Main />}>
-    <Route path="/:id/" element={<Food />} />
+    <Route path="/:id" element={<Food />} />
+    <Route path="/:id/:id" element={<Recipe />} />
   </Route>,
 )

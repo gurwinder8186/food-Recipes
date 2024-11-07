@@ -27,7 +27,7 @@ export function GetRecipe() {
   return useQuery({
     queryKey: ['recipe'],
     queryFn: async () => {
-      const res = await request.get('/api/v1/')
+      const res = await request.get('/api/v1/cuisines/${id}/${id}')
       return res.body as Recipe[]
     }
   })
