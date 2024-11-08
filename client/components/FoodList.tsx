@@ -4,7 +4,6 @@ import Loading from './Loading.tsx'
 import ErrorMessage from './ErrorMessage.tsx'
 
 function FoodList() {
-
   const { id } = useParams()
   const { data, isError, isPending } = useFoodList(id)
 
@@ -20,20 +19,26 @@ function FoodList() {
     // console.log('foodlist', data)
     return (
       <>
-    <section className='foodlist'>
-      <h1>Select an option to see more!</h1>
-      {data.map((food) => (
-        <div key={food.name}>
-          <Link to={`/cuisines/${food.cuisines_id}/${food.foodList_id}`}>
-          <h3>{food.name}</h3></Link>
-          <p>{food.description}</p>
-        </div>
-      ))}
-    </section>
-    <Outlet/>
-    </>
-  )
-}
+        <section className="foodlist">
+          <h1>Select an option to see more!</h1>
+          {data.map((food) => (
+            <div key={food.name}>
+              <Link to={`/cuisines/${food.cuisines_id}/${food.foodList_id}`}>
+                <h3>{food.name}</h3>
+                <img
+                  src={`/images/${food.name.toLowerCase()}.jpg`}
+                  alt={`${food.name} food`}
+                  width="200px"
+                />
+              </Link>
+              <p>{food.description}</p>
+            </div>
+          ))}
+        </section>
+        <Outlet />
+      </>
+    )
+  }
 }
 
 export default FoodList
