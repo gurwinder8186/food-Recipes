@@ -14,11 +14,19 @@ function Recipe() {
   if (isError) {
     return <p>There was an error</p>
   }
-
+  
+  if(data) {
+    console.log('recipe', data)
+  }
   return (
     <section className="recipe">
-      <h1>{data.name}</h1>
-      <p>TESTING</p>
+      {data.map((food) => (
+        <div key={food.name}>
+          <h3>{food.name}</h3>
+          <p>{food.ingredients}</p>
+          <p>{food.instructions}</p>
+        </div>
+      ))}
     </section>
   )
 }
