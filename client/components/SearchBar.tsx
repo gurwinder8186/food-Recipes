@@ -3,6 +3,8 @@ import { useFoodList } from '../apiClient'
 import { useQuery } from '@tanstack/react-query'
 // import LoadingSpinner from './Loading'
 import { useState } from 'react'
+import Loading from './Loading'
+import ErrorMessage from './ErrorMessage'
 
 export default function RecipeSearch() {
   const [name, setName] = useState('')
@@ -17,11 +19,11 @@ export default function RecipeSearch() {
 
   const { data, isLoading, isError, error } = useFoodList(2)
   if (isError) {
-    return <p>Oops! {String(error)}</p>
+    return <ErrorMessage />
   }
   if (data)
     if (isLoading) {
-      return <p>loading</p>
+      return <Loading />
     }
   console.log('searchbar', data)
   // const searchResults = data?.filter((cuisine) => {

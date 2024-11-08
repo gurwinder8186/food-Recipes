@@ -1,5 +1,7 @@
 import { Outlet, useParams, Link } from 'react-router-dom'
 import { useFoodList } from '../apiClient.ts'
+import Loading from './Loading.tsx'
+import ErrorMessage from './ErrorMessage.tsx'
 
 function FoodList() {
 
@@ -7,11 +9,11 @@ function FoodList() {
   const { data, isError, isPending } = useFoodList(id)
 
   if (isPending) {
-    return <p>Loading...</p>
+    return <Loading />
   }
 
   if (isError) {
-    return <p>There was an error</p>
+    return <ErrorMessage />
   }
 
   if (data) {

@@ -1,0 +1,110 @@
+/* Full-screen "explosion" effect */
+.error-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards; /* Fade-in effect for the whole error */
+  z-index: 1000; /* Ensure it appears on top of everything */
+}
+
+/* Fire explosion animation */
+.fire {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 69, 0, 1) 0%, rgba(255, 140, 0, 1) 35%, rgba(255, 215, 0, 0) 75%);
+  animation: explode 1.5s ease-out forwards, fireFlicker 0.3s infinite alternate;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transform-origin: center;
+}
+
+/* Fire explosion effect */
+@keyframes explode {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+    filter: blur(6px);
+  }
+  50% {
+    transform: scale(5);
+    opacity: 0.8;
+    filter: blur(4px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+    filter: blur(0);
+  }
+}
+
+/* Fire flicker effect to make the flames look more dynamic */
+@keyframes fireFlicker {
+  0% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+/* Error message sliding in */
+.error-message {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px) scale(0.7);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Error message fade-in after the explosion */
+.error-message.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Fade-in for the entire container */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.this-is-fine {
+  height: relative;
+  width: 500px
+}
+
+.computer {
+  height: 500px;
+  width: relative
+}
+
+
+.shake-it {
+  display: flex;
+  width: 650px;
+  height: relative;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30vw;
+}
