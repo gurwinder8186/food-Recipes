@@ -33,8 +33,10 @@ body {
 }
 .heading {
   display: flex;
-  align-items: center;
   justify-content: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(65, 183, 108);
 }
 .home {
   font-size: 2.5rem;
@@ -97,4 +99,41 @@ body {
   font-size: 1rem;
   margin-top: 0.5rem;
   line-height: 1.5;
+}
+
+.home {
+  display: flex;
+}
+.recipe {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mainDiv {
+  display: flex;
+}
+
+.recipe {
+  width: 500px;
+  height: relative;
+  margin: 1rem;
+  margin-bottom: 600px;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.words {
+  color: #485203fa;
+  text-decoration: none;
+}
+.words:hover {
+  color: rgb(233, 97, 13);
+}
+ul {
+  list-style: none;
 }

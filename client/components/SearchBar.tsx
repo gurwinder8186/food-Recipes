@@ -46,6 +46,7 @@ export default function RecipeSearch() {
         {searchResults?.map((cuisine, idx) => (
           <li key={idx}>
             <Link
+              className="words"
               to={`/cuisines/${cuisine.cuisines_id}/${cuisine.foodList_id}`}
             >
               {cuisine.name}
