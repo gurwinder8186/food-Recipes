@@ -8,7 +8,7 @@ export default function Main() {
   return (
     <>
       <Nav />
-      <RecipeSearch />
+      {/* <RecipeSearch /> */}
       <Outlet />
     </>
   )
