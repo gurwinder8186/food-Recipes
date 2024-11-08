@@ -16,8 +16,8 @@ function Recipe() {
   }
   
   if(data) {
-    console.log('recipe', data)
-  }
+  //   console.log('recipe', data)
+  
   return (
     <section className="recipe">
       {data.map((food) => (
@@ -28,7 +28,8 @@ function Recipe() {
         </div>
       ))}
     </section>
-  )
+   )
+  }
 }
 
 export default Recipe

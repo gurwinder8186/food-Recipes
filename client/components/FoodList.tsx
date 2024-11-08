@@ -15,7 +15,7 @@ function FoodList() {
   }
 
   if (data) {
-    console.log('foodlist', data)
+    // console.log('foodlist', data)
     return (
       <>
     <section className='foodlist'>
