@@ -22,7 +22,7 @@ function FoodList() {
       <h1>Select an option to see more!</h1>
       {data.map((food) => (
         <div key={food.name}>
-          <Link to={`/cuisines/${food.cuisines_id}/${food.recipeId}`}>
+          <Link to={`/cuisines/${food.cuisines_id}/${food.foodList_id}`}>
           <h3>{food.name}</h3></Link>
           <p>{food.description}</p>
         </div>
