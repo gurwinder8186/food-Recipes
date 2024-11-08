@@ -26,15 +26,15 @@ export default function RecipeSearch() {
       return <Loading />
     }
   console.log('searchbar', data)
-  // const searchResults = data?.filter((cuisine) => {
-  //   return cuisine.name?.toLowerCase().includes(name.toLowerCase())
-  // })
+  const searchResults = data?.filter((cuisine) => {
+    return cuisine.name?.toLowerCase().includes(name.toLowerCase())
+  })
 
   return (
-    <div>
-      <h1>Search Recipes by Name:</h1>
+    <div className="searchBar">
+      <h3>Search Recipes </h3>
       <form>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">: </label>
         <input
           type="text"
           name="name"
@@ -45,7 +45,7 @@ export default function RecipeSearch() {
       <ul>
         {/* {searchResults?.map((cuisine, idx) => (
           <li key={idx}>
-            <Link to={`/cuisine/${cuisine.id}`}>{cuisine.name}</Link>
+            <Link to={`/cuisine/id/${cuisine.name}`}>{cuisine.name}</Link>
           </li>
         ))} */}
       </ul>
