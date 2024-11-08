@@ -3,6 +3,7 @@ import { useFoodList } from '../apiClient.ts'
 import Loading from './Loading.tsx'
 import ErrorMessage from './ErrorMessage.tsx'
 import RecipeSearch from './SearchBar.tsx'
+import Recipe from './Recipe.tsx'
 
 function FoodList() {
   const { id } = useParams()
@@ -21,17 +22,17 @@ function FoodList() {
     return (
       <>
       <RecipeSearch />
-        <section className="foodlist">
-          <h1>Select an option to see more!</h1>
+          <h1 className="heading">Select an option to see more!</h1>
+        <section className="home">
           {data.map((food) => (
             <div key={food.name}>
-              <Link to={`/cuisines/${food.cuisines_id}/${food.foodList_id}`}>
-                <h3>{food.name}</h3>
                 <img
                   src={`/images/${food.name.toLowerCase()}.jpg`}
                   alt={`${food.name} food`}
                   width="200px"
                 />
+              <Link className="names" to={`/cuisines/${food.cuisines_id}/${food.foodList_id}`}>
+                <h3>{food.name}</h3>
               </Link>
               <p>{food.description}</p>
             </div>
