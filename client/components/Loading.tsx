@@ -1,9 +1,11 @@
+import '/client/fire.css'; 
+
 export default function Loading() {
   return (
     <>
-      <section className="shake-it">
+      <section >
         <p></p>
-        <img src="images/saltandpepper.gif" alt="salt and pepper shaking" />
+        <img className="shake-it" src="images/saltandpepper.gif" alt="salt and pepper shaking" />
       </section>
     </>
   )

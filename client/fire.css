@@ -98,3 +98,13 @@
   height: 500px;
   width: relative
 }
+
+
+.shake-it {
+  display: flex;
+  width: 650px;
+  height: relative;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30vw;
+}
