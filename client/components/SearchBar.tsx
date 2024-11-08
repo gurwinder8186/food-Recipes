@@ -24,9 +24,9 @@ export default function RecipeSearch() {
       return <p>loading</p>
     }
   console.log('searchbar', data)
-  // const searchResults = data?.filter((cuisine) => {
-  //   return cuisine.name?.toLowerCase().includes(name.toLowerCase())
-  // })
+  const searchResults = data?.filter((cuisine) => {
+    return cuisine.name?.toLowerCase().includes(name.toLowerCase())
+  })
 
   return (
     <div>
@@ -43,7 +43,7 @@ export default function RecipeSearch() {
       <ul>
         {/* {searchResults?.map((cuisine, idx) => (
           <li key={idx}>
-            <Link to={`/cuisine/${cuisine.id}`}>{cuisine.name}</Link>
+            <Link to={`/cuisine/${cuisine.name}`}>{cuisine.name}</Link>
           </li>
         ))} */}
       </ul>
