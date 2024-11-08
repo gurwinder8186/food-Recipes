@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useRecipe } from '../apiClient'
+import ErrorMessage from './ErrorMessage'
+import Loading from './Loading'
 
 function Recipe() {
   const { id, recipeId } = useParams()
@@ -8,11 +10,11 @@ function Recipe() {
   const { data, isError, isPending } = useRecipe({id: cuisineId, recipeId: recId})
 
   if (isPending) {
-    return <p>Loading...</p>
+    return <Loading />
   }
 
   if (isError) {
-    return <p>There was an error</p>
+    return <ErrorMessage />
   }
   
   if(data) {

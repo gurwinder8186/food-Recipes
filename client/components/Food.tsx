@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom'
 import { useCuisines } from '../apiClient.ts'
+import Loading from './Loading.tsx'
+import ErrorMessage from './ErrorMessage.tsx'
 
 function Food() {
   const { data, isError, isPending } = useCuisines()
 
   if (isPending) {
-    return <p>Loading...</p>
+    return <Loading />
   }
 
   if (isError) {
-    return <p>There was an error</p>
+    return <ErrorMessage />
   }
 
   return (
