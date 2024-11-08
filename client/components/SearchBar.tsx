@@ -30,7 +30,7 @@ export default function RecipeSearch() {
 
   return (
     <div>
-      <h1>Search Recipes by Name:</h1>
+      <h3>Search Recipes by Name:</h3>
       <form>
         <label htmlFor="name">Name</label>
         <input
