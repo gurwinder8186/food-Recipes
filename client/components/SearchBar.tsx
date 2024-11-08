@@ -29,10 +29,10 @@ export default function RecipeSearch() {
   })
 
   return (
-    <div>
-      <h3>Search Recipes by Name:</h3>
+    <div className="searchBar">
+      <h3>Search Recipes </h3>
       <form>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">: </label>
         <input
           type="text"
           name="name"
@@ -43,7 +43,7 @@ export default function RecipeSearch() {
       <ul>
         {/* {searchResults?.map((cuisine, idx) => (
           <li key={idx}>
-            <Link to={`/cuisine/${cuisine.name}`}>{cuisine.name}</Link>
+            <Link to={`/cuisine/id/${cuisine.name}`}>{cuisine.name}</Link>
           </li>
         ))} */}
       </ul>
