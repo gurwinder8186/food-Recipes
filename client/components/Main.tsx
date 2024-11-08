@@ -1,4 +1,3 @@
-
 // HERE WILL BE THE FIRST HOME PAGE
 import { Outlet } from 'react-router-dom'
 import RecipeSearch from './SearchBar'
@@ -8,8 +7,10 @@ export default function Main() {
   return (
     <>
       <Nav />
-      {/* <RecipeSearch /> */}
-      <Outlet />
+      <RecipeSearch />
+      <div className="mainDiv">
+        <Outlet />
+      </div>
     </>
   )
 }

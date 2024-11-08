@@ -16,15 +16,15 @@ function Food() {
 
   return (
     <>
-      <h1 className="heading">Select your favourite Cuisines!</h1>
+      {/* <h1 className="heading">Select your favourite Cuisines!</h1> */}
       <section className="home">
         {data.map((cuisine) => (
           <div key={cuisine.name}>
-                <img
-                  src={`images/${cuisine.name.toLowerCase()}.jpg`}
-                  alt={`${cuisine.name} food`}
-                  width="200px"
-                />
+            <img
+              src={`images/${cuisine.name.toLowerCase()}.jpg`}
+              alt={`${cuisine.name} food`}
+              width="200px"
+            />
             <h3>
               <Link className="names" to={`/cuisines/${cuisine.id}`}>
                 {cuisine.name}{' '}
