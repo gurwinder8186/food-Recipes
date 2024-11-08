@@ -4,14 +4,14 @@ export interface Cuisine {
   description: string
 }
 
-export interface Dish {
-  name: string
-  description: string
-  cuisines_id: number
-}
 export interface Recipe {
   foodList_id: number
   name: string
   ingredients: string
   instructions: string
+}
+export interface Dish extends Recipe {
+  name: string
+  description: string
+  cuisines_id: number | string
 }
