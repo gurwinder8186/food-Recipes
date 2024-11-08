@@ -17,7 +17,7 @@ export default function RecipeSearch() {
   const cuisineId = id as string
   console.log(cuisineId)
 
-  const { data, isLoading, isError, error } = useFoodList(2)
+  const { data, isLoading, isError } = useFoodList(id)
   if (isError) {
     return <ErrorMessage />
   }
@@ -43,11 +43,15 @@ export default function RecipeSearch() {
         />
       </form>
       <ul>
-        {/* {searchResults?.map((cuisine, idx) => (
+        {searchResults?.map((cuisine, idx) => (
           <li key={idx}>
-            <Link to={`/cuisine/id/${cuisine.name}`}>{cuisine.name}</Link>
+            <Link
+              to={`/cuisines/${cuisine.cuisines_id}/${cuisine.foodList_id}`}
+            >
+              {cuisine.name}
+            </Link>
           </li>
-        ))} */}
+        ))}
       </ul>
     </div>
   )
