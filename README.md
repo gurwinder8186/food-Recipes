@@ -11,7 +11,7 @@ Food Recipes is a web application that allows users to explore popular cuisines 
 <img src="./images/cusinies.png" alt="Cuisines Page" width="600"/>
 
 ### Page Showing Recipe Details for a Selected Dish:
-<img src="./images/RecipeDetailPage.png" alt="Recipe Details Page" width="600"/>
+<img src="./images/dish.png" alt="Recipe Details Page" width="600"/>
 ---
 
 ## 🚀 Features
