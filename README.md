@@ -1,35 +1,50 @@
-# Boilerplate: Fullstack with Sass
+# 🍽️ Food Recipes
 
-## Setup
+Food Recipes is a web application that allows users to explore popular cuisines and select specific dishes to discover their recipes. The project includes a search functionality to find particular dishes within a selected cuisine, making it an easy and engaging tool for food enthusiasts.
 
-### What's included
+## 📸 Screenshots
 
-This repo includes:
+### Page Showing Dishes Under a Cuisine:
+![Cuisines Page](./images/HomePageShowingCusinies.png)
 
-* a single, simple API endpoint (`/api/v1/fruits`)
-* a single React component (`<App />`)
-* an example database module (`server/db/fruits.js`)
-* an API client module (`client/apis/fruits.js`)
-* configuration for Vitest and testing library
-* configuration for server-side debugging in VS Code
-* configuration for preprocessing Sass
 
-### Installation
+### Page Showing Dishes Under a Cuisine:
+![Cuisines Page](./images/cusinies.png)
 
-#### **From the Github UI**
-
-See the instructions [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) to use Github's feature to create a new repo from a template.
-
-#### **From the command line**
-
-```
-git clone https://github.com/dev-academy-challenges/boilerplate-fullstack [your-project-name]
-cd [your-project-name]
-npm install # to install dependencies
-npm run dev # to start the dev server
-```
-
-You can find the server running on [http://localhost:3000](http://localhost:3000) and the client running on [http://localhost:5173](http://localhost:5173).
+### Page Showing Recipe Details for a Selected Dish:
+![Recipe Details Page](./images/dish.png)
 
 ---
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-fullstack)
+
+## 🚀 Features
+
+- Explore dishes categorized by different cuisines.
+- Search for specific dishes within a cuisine.
+- View detailed recipes for selected dishes.
+- Simple and intuitive user interface for easy navigation.
+
+---
+
+## 🔧 Tech Stack
+
+- **Frontend:** React, JavaScript, CSS
+- **Backend:** Node.js, Express.js
+- **Database:** SQLite3
+- **Development Tools:** Knex.js
+
+---
+
+## 🛠 Project Details
+
+### Development Team:
+This project was collaboratively developed by a team of three members. We worked together to design and implement the frontend, backend, and database layers.
+
+### My Role:
+- Focused on server-side development.
+- Created seed data and managed database tables.
+- Developed backend routes and database query functions.
+
+---
+
+## 🚀 Deployment Status:
+The project has not been deployed yet, but you can explore its functionality through the provided screenshots.
